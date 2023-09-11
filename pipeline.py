@@ -48,4 +48,4 @@ translated_table = sqlalchemy.Table(
 metadata.create_all(engine)
 
 # Insert data from the DataFrame into the database table
-df.to_sql("Translated_Table", con=engine, if_exists="replace", index=False)
+df.to_sql("Translated_Table", con=engine, if_exists="replace", index=False, dtype={'English': sqlalchemy.NVARCHAR(), 'Arabic': sqlalchemy.NVARCHAR()})
